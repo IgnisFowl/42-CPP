@@ -1,16 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarie-c2@c1r4p1.42sp.org.br <aarie-c2@c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/20 10:28:36 by aarie-c2@c1       #+#    #+#             */
+/*   Updated: 2025/09/20 10:34:17 by aarie-c2@c1      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 #include <iostream>
+#include <string>
 
-int getLevelIndex(const std::string& level) {
+enum Level {
+    DEBUG = 0,
+    INFO = 1,
+    WARNING = 2,
+    ERROR = 3,
+    INVALID = -1
+};
+
+Level getLevelIndex(const std::string& level) {
     if (level == "DEBUG")
-        return 0;
+        return DEBUG;
     else if (level == "INFO")
-        return 1;
+        return INFO;
     else if (level == "WARNING")
-        return 2;
+        return WARNING;
     else if (level == "ERROR")
-        return 3;
-    return -1;
+        return ERROR;
+    return INVALID;
 }
 
 int main(int argc, char** argv) {

@@ -20,7 +20,7 @@ static std::string formatField(const std::string& str) {
 }
 
 void PhoneBook::displayContacts() const {
-    std::cout << "   Index  |First Name| Last Name| Nickname " << std::endl;
+    std::cout << "     Index|First Name| Last Name| Nickname " << std::endl;
     for (int i = 0; i < contactCount; ++i) {
         std::cout << std::setw(10) << i;
         std::cout << "|" << std::setw(10) << formatField(contacts[i].getFirstName());
@@ -35,11 +35,13 @@ void PhoneBook::displayContact(int index) const{
         std::cerr << "Invalid index!" << std::endl;
         return;
     }
+    else if (index >= 0 && index <= contactCount) {
     std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;
     std::cout << "Last Name: " << contacts[index].getLastName() << std::endl;
     std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
     std::cout << "Phone Numbers: " << contacts[index].getPhoneNumber() << std::endl;
     std::cout << "Tarkest secret: " << contacts[index].getDarkestSecret() << std::endl;
+    }
 }
 
 int PhoneBook::getContactCount() const {
