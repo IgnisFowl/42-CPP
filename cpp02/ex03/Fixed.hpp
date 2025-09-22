@@ -6,7 +6,7 @@
 /*   By: aarie-c2 <aarie-c2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 15:07:20 by aarie-c2@c1       #+#    #+#             */
-/*   Updated: 2025/09/22 10:16:21 by aarie-c2         ###   ########.fr       */
+/*   Updated: 2025/09/22 10:52:33 by aarie-c2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,31 @@ class Fixed {
 
 		float toFloat(void) const;
 		int toInt(void) const;
+
+				bool operator>(const Fixed& rhs) const;
+		bool operator<(const Fixed& rhs) const;
+		bool operator>=(const Fixed& rhs) const;
+		bool operator<=(const Fixed& rhs) const;
+		bool operator==(const Fixed& rhs) const;
+		bool operator!=(const Fixed& rhs) const;
+
+		Fixed operator+(const Fixed& rhs) const;
+		Fixed operator-(const Fixed& rhs) const;
+		Fixed operator*(const Fixed& rhs) const;
+		Fixed operator/(const Fixed& rhs) const;
+
+		Fixed& operator++();
+		Fixed operator++(int);
+		Fixed& operator--();
+		Fixed operator--(int);
+		Fixed operator-() const;
+
+		static Fixed& min (Fixed& a, Fixed& b);
+		static const Fixed& min(const Fixed& a, const Fixed& b);
+		static Fixed& max(Fixed& a, Fixed& b);
+		static const Fixed& max(const Fixed& a, const Fixed& b);
+
+		bool almostEqual(const Fixed& other, float epsilon) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
