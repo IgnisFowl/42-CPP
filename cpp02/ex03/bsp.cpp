@@ -6,7 +6,7 @@
 /*   By: aarie-c2 <aarie-c2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 10:41:53 by aarie-c2          #+#    #+#             */
-/*   Updated: 2025/09/23 16:31:12 by aarie-c2         ###   ########.fr       */
+/*   Updated: 2025/09/23 16:36:27 by aarie-c2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 
     bool has_neg = (d1 < Fixed(0)) || (d2 < Fixed(0)) || (d3 < Fixed(0));
     bool has_pos = (d1 > Fixed(0)) || (d2 > Fixed(0)) || (d3 > Fixed(0));
+    bool has_zero = (d1 == Fixed(0)) || (d2 == Fixed(0)) || (d3 == Fixed(0));
 
-    if (!(d1 == Fixed(0)) && !(d2 == Fixed(0)) && !(d3 == Fixed(0))) {
-        return !(has_neg && has_pos);
-    }
-    return false;
+    if (has_zero)
+        return false;
+    return !(has_neg && has_pos);
 }
