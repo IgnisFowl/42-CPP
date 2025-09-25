@@ -16,13 +16,19 @@ Parameterized Constructor (sometimes included for completeness).
 Typical class skeleton:
 
 cpp
+
 class Example {
 
 public:
+
     Example();                               // Default constructor
+    
     Example(const Example& other);           // Copy constructor
+    
     Example& operator=(const Example& other);// Copy assignment operator
+    
     ~Example();                              // Destructor
+    
 };
 
 Why Is It Important?
