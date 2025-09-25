@@ -17,6 +17,7 @@ Typical class skeleton:
 
 cpp
 class Example {
+
 public:
     Example();                               // Default constructor
     Example(const Example& other);           // Copy constructor
